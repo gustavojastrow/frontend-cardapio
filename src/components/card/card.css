@@ -19,7 +19,14 @@
 #title{
     color: #FF6347ed;
 }
+
+#description{
+    margin-top: -20px;
+    color:black;
+    font-weight: 400;
+}
 #valor {
+    margin-top: -10px;
     font-size: 1.2rem ;
     color: black;
 }

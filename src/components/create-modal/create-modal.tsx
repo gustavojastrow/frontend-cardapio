@@ -26,8 +26,10 @@ const Input = ({ label, value, updateValue }: InputProps) => {
 
 export function CreateModal({ closeModal }: ModalProps){
     const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
     const [price, setPrice] = useState(0);
     const [image, setImage] = useState("");
+    
     const { mutate, isSuccess, isPending } = useFoodDataMutate();
 
     const back = () => {
@@ -37,7 +39,8 @@ export function CreateModal({ closeModal }: ModalProps){
         const foodData: FoodData = {
             title, 
             price,
-            image
+            image,
+            description
         }
         mutate(foodData)
     }
@@ -54,6 +57,7 @@ export function CreateModal({ closeModal }: ModalProps){
                 <h2>Cadastre um novo item no cardápio</h2>
                 <form className="input-container">
                     <Input label="Título:" value={title} updateValue={setTitle}/>
+                    <Input label="Descrição:" value={description} updateValue={setDescription}/>
                     <Input label="Preço:" value={price} updateValue={setPrice}/>
                     <Input label="Link da imagem:" value={image} updateValue={setImage}/>
                 </form>
