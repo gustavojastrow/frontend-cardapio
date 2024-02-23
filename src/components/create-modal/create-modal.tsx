@@ -30,6 +30,9 @@ export function CreateModal({ closeModal }: ModalProps){
     const [image, setImage] = useState("");
     const { mutate, isSuccess, isPending } = useFoodDataMutate();
 
+    const back = () => {
+        closeModal();
+    }
     const submit = () => {
         const foodData: FoodData = {
             title, 
@@ -38,6 +41,7 @@ export function CreateModal({ closeModal }: ModalProps){
         }
         mutate(foodData)
     }
+
 
     useEffect(() => {
         if(!isSuccess) return 
@@ -53,9 +57,14 @@ export function CreateModal({ closeModal }: ModalProps){
                     <Input label="Preço:" value={price} updateValue={setPrice}/>
                     <Input label="Link da imagem:" value={image} updateValue={setImage}/>
                 </form>
-                <button onClick={submit} className="btn-secondary">
-                    {isPending ? 'postando...' : 'Postar'}
-                </button>
+                    <div className='buttons'>
+                        <button onClick={submit} className="btn-secondary">
+                            {isPending ? 'postando...' : 'Postar'}
+                        </button>
+                        <button onClick={back} className='btn-back'>
+                            Voltar
+                        </button>
+                    </div>
             </div>
         </div>
     )

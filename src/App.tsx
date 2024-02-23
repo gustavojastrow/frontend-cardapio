@@ -35,7 +35,6 @@ function App() {
       <button onClick={handleOpenModal}>+</button>
     </div>
     </>
-
   )
 }
 

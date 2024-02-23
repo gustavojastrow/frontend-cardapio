@@ -53,14 +53,25 @@
     margin-bottom: 8px;
     font-size: 18px;
 }
-
-.modal-overlay .modal-body .btn-secondary {
-    position: initial;
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
     width: 100%;
-    margin-top: 12px;
 }
 
-.modal-overlay .modal-body .btn-secondary:hover {
+.modal-overlay .modal-body .btn-secondary{
+    width: 40%;
+    position: inherit;
+}
+
+.modal-overlay .modal-body .btn-back {
+    width: 40%;
+    position: inherit;  
+
+}
+
+.modal-overlay .modal-body .btn-secondary:hover .btn-back:hover{
     background-color: #FF7F50;
     transform: scale(1);
 }
+
