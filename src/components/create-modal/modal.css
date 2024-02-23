@@ -26,6 +26,7 @@
     justify-content: space-between;
 }
 
+
 .modal-overlay .modal-body h2 {
     font-size: 32px;
 }
@@ -56,10 +57,10 @@
 .modal-overlay .modal-body .btn-secondary {
     position: initial;
     width: 100%;
-    margin-top: 32px;
+    margin-top: 12px;
 }
 
 .modal-overlay .modal-body .btn-secondary:hover {
-    background-color: #3a44f8;
+    background-color: #FF7F50;
     transform: scale(1);
 }

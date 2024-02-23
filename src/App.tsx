@@ -3,6 +3,7 @@ import './App.css'
 import { useFoodData } from './hooks/useFoodData';
 import { useState } from 'react';
 import { CreateModal } from './components/create-modal/create-modal';
+import cardapio from './assets/cardapio.png'
 
 function App() {
 
@@ -14,8 +15,13 @@ function App() {
   }
 
   return (
+    <>
+      <nav className='nav'>
+        <img src={cardapio} alt="" />
+        <h1>Cardápio digital</h1>
+      </nav>
     <div className="container">
-      <h1>Cardápio</h1>
+
       <div className="card-grid">
         {data?.map(foodData=> 
         <Card 
@@ -26,8 +32,10 @@ function App() {
           )}
       </div>
       {isModalOpen && <CreateModal closeModal={handleOpenModal}/>}
-      <button onClick={handleOpenModal}>Novo</button>
+      <button onClick={handleOpenModal}>+</button>
     </div>
+    </>
+
   )
 }
 
